@@ -13,24 +13,34 @@ func TestCalc(t *testing.T) {
 		expectedResult float64
 	}{
 		{
-			name:           "simple",
+			name:           "Successful calculation",
 			expression:     "1+1",
 			expectedResult: 2,
 		},
 		{
-			name:           "priority",
+			name:           "Successful calculation",
+			expression:     "20+20",
+			expectedResult: 40,
+		},
+		{
+			name:           "Priority with parentheses",
 			expression:     "(2+2)*2",
 			expectedResult: 8,
 		},
 		{
-			name:           "priority",
+			name:           "Priority",
 			expression:     "2+2*2",
 			expectedResult: 6,
 		},
 		{
-			name:           "/",
+			name:           "Division",
 			expression:     "1/2",
 			expectedResult: 0.5,
+		},
+		{
+			name:           "Hard expression",
+			expression:     "(((1/2 + 3/2) * 15 - 1) * 84) / 2 - 5 * 220",
+			expectedResult: 118,
 		},
 	}
 
@@ -52,19 +62,23 @@ func TestCalc(t *testing.T) {
 		expectedErr error
 	}{
 		{
-			name:       "simple",
+			name:       "Simple",
 			expression: "1+1*",
 		},
 		{
-			name:       "priority",
+			name:       "Priority",
 			expression: "2+2**2",
 		},
 		{
-			name:       "priority",
+			name:       "Priority",
 			expression: "((2+2-*(2",
 		},
 		{
-			name:       "empty",
+			name:       "Unknown operator",
+			expression: "2 + 2 ^ 2",
+		},
+		{
+			name:       "Empty",
 			expression: "",
 		},
 	}

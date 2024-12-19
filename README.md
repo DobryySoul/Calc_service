@@ -7,7 +7,7 @@
 Клонируйте этот репозиторий:
 
 ```sh
-git clone https://github.com/DobryySoul/yandex_repo_go.git
+git clone https://github.com/DobryySoul/yandex_repo.git
 ```
 
 Мы почти готовы запустить сервис, но сначала нам нужно выполнить некоторые настройки конфигурации.
